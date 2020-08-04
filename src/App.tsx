@@ -5,8 +5,13 @@ import { Card } from './common/components/Card';
 function App() {
 
   return (
-    <div className="App">
+    <div className="App card-wrapper">
       <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
+      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
+      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
+      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
+      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
+
     </div>
   );
 }
