@@ -1,18 +1,12 @@
 import * as React from 'react';
-import {CoursesList} from './common/components/CoursesList';
+import { data } from './data/data.js';
+import { Card } from './common/components/Card';
 
 function App() {
-  const courses = [{
-    name: 'name1'
-  }, {
-    name: 'name2'
-  }, {
-    name: 'name3'
-  }];
 
   return (
     <div className="App">
-      <CoursesList coursesList={courses} />
+      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
     </div>
   );
 }
