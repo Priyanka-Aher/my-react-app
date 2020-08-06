@@ -3,15 +3,21 @@ import { data } from './data/data.js';
 import { Card } from './common/components/Card';
 
 function App() {
+  if (!data) {
+    return null;
+  }
+
+  const { cards } = data;
 
   return (
-    <div className="App card-wrapper">
-      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
-      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
-      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
-      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
-      <Card cardHeader={data.cardHeader} cardBody={data.cardBody} cardFooter={data.cardFooter} />
-
+    <div className="card-wrapper">
+    {
+      Array.isArray(cards) && cards.map((card, index) => {
+        return (
+            <Card cardHeader={card.cardHeader} cardBody={card.cardBody} cardFooter={card.cardFooter} />
+        )
+      })
+    }
     </div>
   );
 }
