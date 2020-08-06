@@ -11,13 +11,11 @@ export const Card = ({ cardHeader, cardBody, cardFooter }: CardProps) => {
     const { image } = cardBody;
 
     return (<div className="card card-with-border">
-        <figure className="card-image">
-            <div>
-                <img src={image.src} alt={image.alt} >
-                </img>
-            </div>
+        <figure className="card-figure">
+            <img src={image.src} alt={image.alt} className="card-image"></img>
         </figure>
         <p>This is a card</p>
+        <hr/>
         <div>
             <span>{cardHeader.title}</span>
         </div>

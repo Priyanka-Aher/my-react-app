@@ -1,8 +1,6 @@
 .card-with-border {
-    border: burlywood;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 2px;
+    border: 2px solid burlywood;
+    border-radius: 10px;
 }
 
 .card {
@@ -10,13 +8,29 @@
     color: white;
 }
 
+.card:hover {
+    opacity: 1;
+}
+
 .card-wrapper {
+    // use css grid
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    // The 1fr is what tells the browser to distribute the space between the columns so that each column equally gets one fraction of that space. 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    // minmax(): we need to start by specifying a minimum width for the columns, making sure they don’t get too narrow especially on small viewports
+    // gap with the cards
     grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);
+    // grid-auto-rows: minmax(100px, auto);
   }
 
-// .card-image{
-//     padding-bottom: 29.5%;
-// }  
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; // tl, tr, br, bl
+}  
+
+.card-figure {
+    margin: 0;
+    border-radius: 10px 10px 0 0; // tl, tr, br, bl
+}
